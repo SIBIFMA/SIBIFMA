@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="img/SIB_LOGO.png">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+        body * {
+            box-sizing: border-box;
+            font-family: 'Noto Sans', sans-serif;
+        }
+        body {
+            background-image: url('img/background-login.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;  
+        }
+        .interface {
+            background-color: rgba(0, 0, 0, 0.700);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-login {
+            background-color: #2f3645;
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-radius: 10px;
+            box-shadow: 0px 10px 40px black;
+            padding: 30px;
+            animation: zoomInFadeIn 2s linear;         
+        }
+        .form-login > h1 {
+            font-size: 24pt;
+            margin: 10px;
+            text-align: left;
+            color: #949fc9;
+            font-weight: 600;
+            text-shadow: 0px 5px 10px rgba(31, 31, 31, 0.582);
+        }
+        .form-login > h2 {
+            font-size: 12pt;
+            color: #6f7699;
+            font-weight: 600;
+            margin: 0px 10px 10px 10px;
+        }
+        .textfield {
+            width: 100%;
+            margin: 15px 0px 10px 0px;
+            color: #6f7699;
+            font-weight: 600;
+        }
+        .textfield label {
+            text-shadow: 0px 5px 10px rgba(31, 31, 31, 0.582);
+        }
+        .form-input {
+            background-color: #242935;
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid rgba(31, 31, 31, 0.384);
+            margin-top: 5px;
+            outline: none;
+            box-shadow: 0px 5px 10px rgba(31, 31, 31, 0.384);
+            color: white;
+        }
+        .form-select {
+            background-color: #242935;
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid rgba(31, 31, 31, 0.384);
+            margin-top: 15px;
+            box-shadow: 0px 5px 10px rgba(31, 31, 31, 0.384);
+            color: white;
+            font-weight: 400;
+        }
+        .form-btn {
+            background-color: rgb(57, 47, 92);
+            color: white;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid rgb(51, 42, 83);
+            margin-top: 25px;
+            padding: 5px;
+            text-transform: uppercase;
+            font-weight: 500;
+            box-shadow: 0px 5px 10px rgba(31, 31, 31, 0.582);
+            transition: 0.2s;
+        }
+        .form-btn:hover {
+            background-color: rgb(64, 52, 102);;
+            transform: scale(1.03);
+        }
+        #sem-conta {
+            color: #949fc9;
+            margin-top: 10px;
+            text-shadow: 1px 1px 10px rgb(31, 31, 31);
+            cursor: pointer;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        #sem-conta:hover {
+            color: #a6aecf;
+        }
+        #copyright {
+            margin-top: 15px;
+            margin-bottom: -15px;
+            color: #b9bed1;
+        }
+        .animacao {
+            animation: zoomOutFadeOut 2s linear;  
+        }
+        /* Formatação de Erros Input */
+        .errorInput {
+            border: 1px solid rgb(194, 57, 57) !important;
+        }
+        .sucessoInput {
+            border: 1px solid rgb(57, 194, 87) !important;
+        }
+        /* Animações */
+        @keyframes zoomInFadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+            from {scale: 1.05;}
+            to {scale: 1;}
+        }
+        @keyframes zoomOutFadeOut {
+            from {opacity: 1;}
+            to {opacity: 0;}
+            from {scale: 1;}
+            to {scale: 1.05;}
+        }
+        /* FIM Animações */
+        @media only screen and (max-width: 950px) {
+            .form-login {
+                width: 85%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="interface">
+    <div class="form-login">
+        <h1>Seja Bem-vindo ao SIB</h1>
+        <h2>Faça seu login para acessar nosso site</h2>
+        <div class="textfield">
+            <label for="email">Usuário</label>
+            <input type="text" id="username" class="form-input">
+        </div>
+        <div class="textfield">
+            <label for="password">Senha</label>
+            <input type="password" id="password" class="form-input">
+        </div>
+        <select class="form-select textfield" id="cargo" aria-label="Default select example">
+            <option selected>Escolha seu cargo</option>
+            <option value="1">Estudante</option>
+            <option value="2">Servidor</option>
+          </select>
+        <button type="button" id="form-btn" class="form-btn">Entrar</button>
+        <a id="sem-conta" href="duvidas.html">Não tenho uma conta</a>
+        <small id="copyright">© Copyright, 2022 - IFMA Development</small>
+    </div>
+</div>
+<script>
+    const button = document.getElementById('form-btn')
+
+    button.addEventListener('click', (event) => {
+        event.preventDefault()
+
+        const email = document.getElementById('username')
+        const password = document.getElementById('password')
+        const alerta = document.getElementById('alerta')
+        const telaLogin = document.querySelector('.form-login')
+        const cargo = document.getElementById('cargo')
+
+        if(email.value == '') {
+            email.classList.add("errorInput")
+        }
+        if(password.value == '') {
+            password.classList.add("errorInput")
+        }
+        if (email.value.length <= 4) {
+            email.classList.add("errorInput")
+        }else {
+            email.classList.add("sucessoInput")
+        }
+        if (password.value.length <= 4) {
+            password.classList.add("errorInput")
+        }else {
+            password.classList.add("sucessoInput")
+        }
+
+        if (cargo.value == 1) {
+            cargo.classList.remove('errorInput')
+            if (email.value == 'admin') {
+                email.classList.remove("errorInput")
+                email.classList.add("sucessoInput")
+                if (password.value == 'admin') {
+                    telaLogin.classList.add('animacao')
+                    setTimeout(function() {
+                        location.href="home.html"
+                    }, 1800)
+                } else {
+                    email.classList.remove("sucessoInput")
+                    password.classList.remove("sucessoInput")
+                    email.classList.add("errorInput")
+                    password.classList.add("errorInput")
+                }
+            } else {
+                email.classList.remove("sucessoInput")
+                password.classList.remove("sucessoInput")
+                email.classList.add("errorInput")
+                password.classList.add("errorInput")
+            }
+        } else if (cargo.value == 2) {
+            cargo.classList.remove('errorInput')
+            if (email.value == 'advanced') {
+                email.classList.remove("errorInput")
+                email.classList.add("sucessoInput")
+                if (password.value == 'admin') {
+                    telaLogin.classList.add('animacao')
+                    setTimeout(function() {
+                        location.href="sib-advanced.html"
+                    }, 1800)
+                } else {
+                    email.classList.remove("sucessoInput")
+                    password.classList.remove("sucessoInput")
+                    email.classList.add("errorInput")
+                    password.classList.add("errorInput")
+                }
+            } else {
+                email.classList.remove("sucessoInput")
+                password.classList.remove("sucessoInput")
+                email.classList.add("errorInput")
+                password.classList.add("errorInput")
+            }
+        } else {
+            email.classList.remove("sucessoInput")
+            password.classList.remove("sucessoInput")
+            email.classList.add("errorInput")
+            password.classList.add("errorInput")
+            cargo.classList.add("errorInput")
+        }
+        
+    }) 
+</script>
+</body>
+</html>
