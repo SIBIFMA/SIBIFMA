@@ -20,7 +20,7 @@
             padding: 0;
         }
         /* Formatação de MENU */
-        header {
+        .navegacao {
             width: 100%;
             height: 10vh;
             text-align: center;
@@ -59,7 +59,7 @@
         .textfield {
             width: 600px;
             height: 200px;
-            position: absolute;
+            position: relative;
             top: calc(50% - 100px);
             left: calc(50% - 300px);
             text-align: center;
@@ -128,7 +128,7 @@
             color: wheat;
         }
         .box-card p {
-            height: 25vh;
+            height: 0%;
             color: wheat;
             font-size: 14pt;
             text-align: center;
@@ -146,7 +146,6 @@
             font-size: 12pt;
             margin-top: 15px;
             font-weight: 200;
-
         }
         .box-card a {
             color: wheat;
@@ -157,7 +156,7 @@
             font-size: 14pt;
             font-weight: 600;
             transition: 0.5s;
-
+            margin-top: 180px;
         }
         .box-card a:hover {
             background-color: rgb(163, 138, 91);
@@ -193,6 +192,40 @@
             background-color: wheat;
             height: 10px;
         }
+        /* Responsividade MENU */
+        .fa-solid.fa-bars {
+            font-size: 300%;
+            margin: 10px;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            display: none;
+        }
+        .bars-responsive {
+            position: fixed !important;
+        }
+        .mobile-menu {
+            display: none;
+            transition: 2s;
+            margin-top: -100px;
+            background-color: wheat;
+            box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.26)
+        }
+        .bars-responsive ul {
+            list-style: none;
+            height: 120vh;
+            padding: 100px 20px 20px 20px;
+        }
+        .bars-responsive li {
+            margin: 10px 0px 10px 0px;
+        }
+        .bars-responsive a {
+            color:  rgb(59, 53, 42);
+            text-decoration: none;
+            font-family: 'Sono';
+        }
+        .aparecer {
+            display: block;
+        }
         /* Formatação de Media Quiries */
         @media (max-width: 900px) {
             .box {
@@ -206,40 +239,60 @@
                 top: calc(50% - 100px);
                 left: calc(50% - 150px);
             }
-            .box-card p {
-                height: 20vh;
-                font-size: 8pt;
-            }
             section h3 {
                 padding-top: 10px;
                 margin-bottom: -10px;
+            }
+            .navegacao {
+                display: none;
+            }
+            .fa-solid.fa-bars {
+                display: block;
+            }
+        }
+        @media (min-width: 900px) {
+            .mobile-menu {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <header>
+    <header class="bars-responsive">
+        <i class="fa-solid fa-bars" onclick="clicar()"></i>
+        <nav class="mobile-menu">
+            <ul id="ul">
+                <li><a href="sib-advanced.html">Home</a></li>
+                <li><a href="qrcard.html">QR Card</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="avancado.html">Avançado</a></li>
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <header class="navegacao">
         <ul class="nav justify-content-center">
             <li class="nav-item">
                 <a class="nav-link" href="#" onmouseover="mudaFoto('img/SIB_LOGO_BRANCO.png')" onmouseout="mudaFoto('img/SIB_LOGO_BRANCO.png')">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onmouseover="mudaFoto('img/cartao.png')" onmouseout="mudaFoto('img/SIB_LOGO_BRANCO.png')">QR Card</a>
+              <a class="nav-link" href="qrcard.html" onmouseover="mudaFoto('img/cartao.png')" onmouseout="mudaFoto('img/SIB_LOGO_BRANCO.png')">QR Card</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" onmouseover="mudaFoto('img/cadastro.png')" onmouseout="mudaFoto('img/SIB_LOGO_BRANCO.png')">Cadastro</a>
+                <a class="nav-link" href="cadastro.html" onmouseover="mudaFoto('img/cadastro.png')" onmouseout="mudaFoto('img/SIB_LOGO_BRANCO.png')">Cadastro</a>
               </li>
             <li class="nav-item"> 
                 <img src="img/SIB_LOGO_BRANCO.png" class="img-logo" id="img-logo" alt="">
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" onmouseover="mudaFoto('img/avancado.png')" onmouseout="mudaFoto('img/SIB_LOGO_BRANCO.png')">Avançado</a>
+                <a class="nav-link" href="avancado.html" onmouseover="mudaFoto('img/avancado.png')" onmouseout="mudaFoto('img/SIB_LOGO_BRANCO.png')">Avançado</a>
               </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" onmouseover="mudaFoto('img/ajuda.png')" onmouseout="mudaFoto('img/SIB_LOGO_BRANCO.png')">Ajuda</a>
+              <a class="nav-link" href="ajuda.html" onmouseover="mudaFoto('img/ajuda.png')" onmouseout="mudaFoto('img/SIB_LOGO_BRANCO.png')">Ajuda</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" onmouseover="mudaFoto('img/sobre.png')" onmouseout="mudaFoto('img/SIB_LOGO_BRANCO.png')">Sobre</a>
+                <a class="nav-link" href="sobre.html" onmouseover="mudaFoto('img/sobre.png')" onmouseout="mudaFoto('img/SIB_LOGO_BRANCO.png')">Sobre</a>
               </li>
         </ul>
     </header>
@@ -331,6 +384,14 @@
         button = document.getElementById('btn-hp')
         function mudaFoto(foto) {
             document.getElementById('img-logo').src = foto;
+        }
+        function clicar() {
+            let menuMobile = document.querySelector('.mobile-menu')
+            if (menuMobile.classList.contains('aparecer')) {
+                menuMobile.classList.remove('aparecer');
+            } else {
+                menuMobile.classList.add('aparecer')
+            }
         }
     </script>
 </body>
