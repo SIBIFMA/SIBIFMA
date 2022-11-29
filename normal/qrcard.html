@@ -85,6 +85,7 @@
             padding: 5px 10px;
             color: rgb(70, 59, 40);
             transition: 0.2s;
+            cursor: pointer;
         }
         .btn-send:hover {
             background-color: rgb(70, 59, 40);
@@ -210,42 +211,42 @@
                     <th scope="row">1</th>
                     <td>J. G. Castro</td>
                     <td>10000001</td>
-                    <td><a class="btn-send">Ver</a></td>
+                    <td><a class="btn-send" onclick="mudaFoto('../img/card-JG.png')">Ver</a></td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
                     <td>A. G. Martins</td>
                     <td>10000002</td>
-                    <td><a class="btn-send">Ver</a></td>
+                    <td><a class="btn-send" onclick="mudaFoto('../img/card-AG.png')">Ver</a></td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
                     <td>L. Lima</td>
                     <td>10000003</td>
-                    <td><a class="btn-send">Ver</a></td>
+                    <td><a class="btn-send" onclick="mudaFoto('../img/card-LL.png')">Ver</a></td>
                   </tr>
                   <tr>
                     <th scope="row">4</th>
                     <td>K. A. dos Santos</td>
                     <td>10000004</td>
-                    <td><a class="btn-send">Ver</a></td>
+                    <td><a class="btn-send" onclick="mudaFoto('../img/card-KA.png')">Ver</a></td>
                   </tr>
                   <tr>
                     <th scope="row">5</th>
                     <td>V. H. Moraes</td>
                     <td>10000005</td>
-                    <td><a class="btn-send">Ver</a></td>
+                    <td><a class="btn-send" onclick="mudaFoto('../img/card-VH.png')">Ver</a></td>
                   </tr>
                   <tr>
                     <th scope="row">6</th>
                     <td>V. Leal</td>
                     <td>10000006</td>
-                    <td><a class="btn-send">Ver</a></td>
+                    <td><a class="btn-send" onclick="mudaFoto('../img/card-VL.png')">Ver</a></td>
                   </tr>
                 </tbody>
               </table>
               <div class="qrcard">
-                <img src="../img/card-JG.png" alt="">
+                <img src="../img/card-JG.png" class="foto" alt="">
               </div>
         </div>
         <footer class="bg text-center text-white">
@@ -295,5 +296,10 @@
             <!-- Copyright -->
         </footer>
     </main>
+    <script>
+        function mudaFoto(foto) {
+          foto = document.querySelector('.foto').src = foto;
+        }
+    </script>
 </body>
 </html>
